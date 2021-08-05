@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Dancing Script', cursive;
+    
+}
+body{
+    /* background-color:#f79400 ; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    position: relative;
+    padding: 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* background-position: center; */
+}
+.container::before{
+    content: "";
+    position: absolute;
+    width: 85%;
+    height: 100%;
+    /* background: #e40707; */
+    backdrop-filter: blur(10px) contrast(120%);
+}
+.giphy{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    z-index: 100;
+    top: 31%;
+    /* bottom: 28%; */
+    right: 35%;
+    /* transform: rotateZ(326deg); */
+    transform: revert;
+}
+.dream{
+    width: 450px;
+    border-radius: 20px;
+    height: auto;
+    transition: 0.5s;
+    clip-path: circle(100%);
+    animation: dreamAni 3s ease-in-out;
+  
+}
+.dream:hover{
+    filter: contrast(120%);
+}
+
+.card{
+    width: 700px;
+    border: 0px solid #302c1e;
+    border-radius: 20px;
+    padding: 50px;
+    margin-left: -50px;
+    margin-top: 100px;
+    z-index: 2;
+    /* //#5e5a3f75 */
+    background-color: #5e5a3f75;
+    padding-left: 100px;
+    box-shadow: 0 0 20px rgba(0,0,0,50%);
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    animation: cardAni 1.5s ease-in-out 2 alternate;
+    transition: 1s;
+
+}
+.card::before{
+    content: "";
+    width: 900px;
+    height: 550px;
+    clip-path: circle(0% at 10px 10px);
+    position: absolute;
+    top:-50px;
+    left: -50px;
+    z-index: -1;
+    transition: 0.7s;
+    color: #333333;
+    background: #00c6ff;
+    /* background: -webkit-linear-gradient(to right, #0072ffdd, #00c6ffdd); */
+    /* background: linear-gradient(to right, #97956C,#2F2F21); */
+    background: linear-gradient(to right bottom, #97956C,#2F2F21,#2f2f21da,#97956C,#29291d);
+
+    animation: cb 4s ease-in;
+    
+}
+.card:hover{
+    transform: translateY(-10px);
+    color: #FFFFFF;
+}
+.card:hover::before{
+    clip-path: circle(130% at 10px 10px);
+
+}
+.card:hover .card-header{
+    color: #1b1b16;
+    text-shadow:  2px 2px #97956C;
+    /* text-shadow:0px -2px 0 #97956C; */
+}
+.card:hover .fb-btn{
+    background-color:#2F2F21;
+    color: #97956C ;
+    border: 1px solid #97956C;
+}
+.card-header{
+    font-size: 3rem;
+    font-weight: bolder;
+    font-family: 'Lobster', cursive;
+    color: #97956C;
+    text-shadow:  2px 2px #2F2F21;
+    /* text-shadow:0px -2px 0 #2F2F21; */
+    transition: 1s;
+}
+.card-body{
+    font-size: 1.5em;
+    font-weight: lighter;
+    font-family: 'Dancing Script', cursive;
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    
+}
+.heart{
+    color: #00c6ff;
+    font-family: 'Lobster', cursive;
+}
+
+.fb-btn{
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #25251B;
+    border-radius: 30px;
+    /* font-weight: bold; */
+    padding: 0 20px;
+    background-color:#97956C;
+    color: #2F2F21;
+    margin-top: 10px;
+    transition: 1s;
+    
+}
+@keyframes dreamAni {
+    0%{
+        transform: translate(-20px,-20px);
+        clip-path: circle(30% at 50px 50px);
+    }
+    50%{
+        transform: translate(10px,10px);
+    }
+    100%{
+        transform: translate(0,0);
+        clip-path: circle(130%);
+    }
+}
+@keyframes cardAni {
+    0%{
+        transform: translate(0,0);
+
+    }
+    50%{
+        transform: translate(-10px,-10px);
+    }
+    100%{
+        transform: translate(20px,20px);
+
+    }
+}
+@keyframes cb {
+    0%{
+
+        clip-path: circle(0% at 50px 50px);
+    }
+    25%{
+        clip-path: circle(20% at 50px 50px);
+    }
+    50%{
+        clip-path: circle(10% at 50px 50px);
+    }
+    75%{
+        clip-path: circle(30% at 50px 50px);
+    }
+    100% {
+        clip-path: circle(0% at 50px 50px);
+    }
+}
